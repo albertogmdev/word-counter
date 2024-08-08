@@ -1,0 +1,14 @@
+.input-component {
+    width: 100%;
+    height: 100vh;
+    background-color: beige;
+
+    .component-toolbar {
+        height: 30px;
+        background-color: aliceblue;
+    }
+
+    .component-input {
+        color: red;
+    }
+}
