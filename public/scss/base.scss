@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    font-family: $font-text;
 }
 
 html {
@@ -13,4 +14,20 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    padding-bottom: $footer-height;
+    min-height: 100vh;
+    background-color: $bg-dark;
+}
+
+.container {
+    display: block;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 95%;
+    padding: 0;
+    position: relative;
 }

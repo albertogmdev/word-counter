@@ -1,13 +1,23 @@
 ---
 // Layout
-import Layout from '../layouts/Layout.astro';
+import Layout from '@layouts/Layout.astro';
 
 // Components
-import TextInput from '../components/TextInput.astro';
+import InputInfo from '@components/InputInfo.astro';
+import TextInput from '@components/TextInput.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
 ---
 
 <Layout title="Word Counter">
 	<main>
+		<Navbar></Navbar>
+		<InputInfo></InputInfo>
 		<TextInput></TextInput>
+		<Footer></Footer>
 	</main>
 </Layout>
+
+<script>
+	console.log(document.querySelector('.input-component'))
+</script>

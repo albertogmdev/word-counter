@@ -1,0 +1,34 @@
+<div class="input-info">
+    <div class="info info-words">
+        <div class="number words-number">0</div>
+        <div class="text words-text">Words</div>
+    </div>
+    <div class="info info-characters">
+        <div class="number characters-number">0</div>
+        <div class="text characters-text">characters</div>
+    </div>
+    <!-- TODO - Caracteres sin espacio -->
+    <!-- TODO - Frases  -->
+    <!-- TODO - Parrafos -->
+</div>
+
+<script>
+    // TODO - Array con caracteres que no deben contar como palabra, por ejemplo , . /n ...
+    
+	const input = document.querySelector('#word-input')
+
+    const wordNumber = document.querySelector('.input-info .info-words .words-number')
+    const characterNumber = document.querySelector('.input-info .info-characters .characters-number')
+
+    const getInputInfo = () => {
+        const inputText = input.value
+
+        console.log(inputText.split(' ').filter(word => word !== ''))
+        wordNumber.innerHTML = inputText.split(' ').filter(word => word !== '').length
+        characterNumber.innerHTML = inputText.length
+    }
+
+    input.addEventListener('change', getInputInfo)
+    input.addEventListener('input', getInputInfo)
+
+</script>

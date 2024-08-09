@@ -1,0 +1,20 @@
+.navbar{
+    padding: 20px 0px;
+    background-color: $bg-black;
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .navbar-name { 
+            color: $text-light;
+        }
+
+        .navbar-icon {
+            width: 20px;
+            height: 20px;
+            background-color: $text-light;
+        }
+    }
+}

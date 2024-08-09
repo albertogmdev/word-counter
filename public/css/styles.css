@@ -2,7 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  font-family: monospace; }
 
 html {
   scroll-behavior: smooth; }
@@ -12,14 +13,88 @@ body {
   padding: 0;
   overflow-x: hidden; }
 
+main {
+  position: relative;
+  padding-bottom: 79px;
+  min-height: 100vh;
+  background-color: #0f0f0f; }
+
+.container {
+  display: block;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 95%;
+  padding: 0;
+  position: relative; }
+
 .input-component {
-  width: 100%;
-  height: 100vh;
-  background-color: beige; }
+  width: 80%;
+  max-width: 700px;
+  margin: 0px auto;
+  padding: 30px 0px; }
   .input-component .component-toolbar {
+    width: 100%;
     height: 30px;
-    background-color: aliceblue; }
+    background-color: #272727; }
   .input-component .component-input {
-    color: red; }
+    outline: none;
+    border: none;
+    resize: none;
+    width: 100%;
+    height: 50vh;
+    max-height: 500px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    background-color: #272727;
+    border-top: 1px solid #2d353b;
+    color: #E1E1E1;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 16px; }
+
+.input-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px 30px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #272727; }
+  .input-info .info {
+    flex: 1 1 0;
+    width: 0; }
+    .input-info .info .number,
+    .input-info .info .text {
+      color: #E1E1E1;
+      font-size: 16px;
+      text-align: center; }
+
+.navbar {
+  padding: 20px 0px;
+  background-color: #000000; }
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .navbar .container .navbar-name {
+      color: #E1E1E1; }
+    .navbar .container .navbar-icon {
+      width: 20px;
+      height: 20px;
+      background-color: #E1E1E1; }
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 30px 0px;
+  background-color: #000000; }
+  .footer .container .footer-text {
+    color: #E1E1E1;
+    text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
