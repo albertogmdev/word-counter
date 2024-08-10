@@ -8,27 +8,36 @@
         <div class="text characters-text">characters</div>
     </div>
     <!-- TODO - Caracteres sin espacio -->
-    <!-- TODO - Frases  -->
-    <!-- TODO - Parrafos -->
+    <div class="info info-sentences">
+        <div class="number sentences-number">0</div>
+        <div class="text sentences-text">sentences</div>
+    </div>
+    <div class="info info-paragraphs">
+        <div class="number paragraphs-number">0</div>
+        <div class="text paragraphs-text">paragraph</div>
+    </div>
 </div>
 
 <script>
     // TODO - Array con caracteres que no deben contar como palabra, por ejemplo , . /n ...
-    
+
 	const input = document.querySelector('#word-input')
 
     const wordNumber = document.querySelector('.input-info .info-words .words-number')
     const characterNumber = document.querySelector('.input-info .info-characters .characters-number')
+    const sentenceNumber = document.querySelector('.input-info .info-sentences .sentences-number')
+    const paragraphNumber = document.querySelector('.input-info .info-paragraphs .paragraphs-number')
 
     const getInputInfo = () => {
         const inputText = input.value
 
-        console.log(inputText.split(' ').filter(word => word !== ''))
-        wordNumber.innerHTML = inputText.split(' ').filter(word => word !== '').length
+        // Words and sentences are also de one that are split by a new line
         characterNumber.innerHTML = inputText.length
+        wordNumber.innerHTML = inputText.split(/\s+/).filter(word => word !== '').length
+        sentenceNumber.innerHTML = inputText.split(/\.\s|\n/).filter(sentence => sentence !== '').length
+        paragraphNumber.innerHTML = inputText.split(/\r?\n/).filter(paragraph => paragraph !== '').length
     }
 
     input.addEventListener('change', getInputInfo)
     input.addEventListener('input', getInputInfo)
-
 </script>
