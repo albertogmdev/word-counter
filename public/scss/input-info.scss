@@ -1,18 +1,16 @@
 .input-info {
     display: flex;
-    align-items: center;
+    align-items: bottom;
     flex-wrap: wrap;
     width: 80%;
     max-width: 700px;
+    border-radius: 10px;
     margin: 30px auto;
     padding: 20px 30px;
-    height: 70px;
-    border-radius: 10px;
     background-color: $bg-medium;
 
     .info {
-        flex: 1 1 0;
-        width: 0;
+        width: 20%;
 
         .number,
         .text {

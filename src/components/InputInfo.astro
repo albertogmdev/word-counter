@@ -1,13 +1,20 @@
 <div class="input-info">
     <div class="info info-words">
         <div class="number words-number">0</div>
-        <div class="text words-text">Words</div>
+        <div class="text words-text">words</div>
     </div>
     <div class="info info-characters">
         <div class="number characters-number">0</div>
         <div class="text characters-text">characters</div>
     </div>
-    <!-- TODO - Caracteres sin espacio -->
+    <div class="info info-nospaces">
+        <div class="number nospaces-number">0</div>
+        <div class="text nospaces-text">characters without spaces</div>
+    </div>
+    <div class="info info-spaces">
+        <div class="number spaces-number">0</div>
+        <div class="text spaces-text">spaces</div>
+    </div>
     <div class="info info-sentences">
         <div class="number sentences-number">0</div>
         <div class="text sentences-text">sentences</div>
@@ -16,26 +23,62 @@
         <div class="number paragraphs-number">0</div>
         <div class="text paragraphs-text">paragraph</div>
     </div>
+    <div class="info info-readtime">
+        <div class="number readtime-number">0s</div>
+        <div class="text readtime-text">read time</div>
+    </div>
+    <div class="info info-speaktime">
+        <div class="number speaktime-number">0s</div>
+        <div class="text speaktime-text">speak time</div>
+    </div>
 </div>
 
 <script>
-    // TODO - Array con caracteres que no deben contar como palabra, por ejemplo , . /n ...
-
 	const input = document.querySelector('#word-input')
 
     const wordNumber = document.querySelector('.input-info .info-words .words-number')
     const characterNumber = document.querySelector('.input-info .info-characters .characters-number')
+    const nospacesNumber = document.querySelector('.input-info .info-nospaces .nospaces-number')
+    const spacesNumber = document.querySelector('.input-info .info-spaces .spaces-number')
     const sentenceNumber = document.querySelector('.input-info .info-sentences .sentences-number')
     const paragraphNumber = document.querySelector('.input-info .info-paragraphs .paragraphs-number')
+    const readtimeNumber = document.querySelector('.input-info .info-readtime .readtime-number')
+    const speaktimeNumber = document.querySelector('.input-info .info-speaktime .speaktime-number')
+
+    const secondsToTime = (seconds) => {
+        const s = seconds % 60 
+        const m = Math.floor(seconds / 60) % 60
+        const h = Math.floor(seconds / 3600)
+
+        let result = ''
+        if (h > 0) result += `${h}h `
+        if (m > 0) result += `${m}min `
+        if (s > 0) result += `${s}s `
+
+        return result
+    }
 
     const getInputInfo = () => {
+        const readTime = 275 / 60 // words per second
+        const speakTime = 180 / 60 // words per second
         const inputText = input.value
 
-        // Words and sentences are also de one that are split by a new line
+        // Remove characters that we dont want to count as a word
+        const wordText = inputText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]\r\n\t]/g, ' ').trim().replace(/\s+/g, ' ')
+        const words = wordText.split(/\s+/).filter(word => word !== '').length
+
+        const characters = inputText.replaceAll('/n', '').length
+        const spaces = inputText.split(' ').length - 1
+
+        // Words and sentences are also the ones that are split by a new line
         characterNumber.innerHTML = inputText.length
-        wordNumber.innerHTML = inputText.split(/\s+/).filter(word => word !== '').length
+        wordNumber.innerHTML = words
+        spacesNumber.innerHTML = spaces.toString()
+        nospacesNumber.innerHTML = (characters - spaces).toString()
         sentenceNumber.innerHTML = inputText.split(/\.\s|\n/).filter(sentence => sentence !== '').length
         paragraphNumber.innerHTML = inputText.split(/\r?\n/).filter(paragraph => paragraph !== '').length
+        readtimeNumber.innerHTML = words < readTime ? '0s' : secondsToTime(Math.floor(words / readTime))
+        speaktimeNumber.innerHTML = words < speakTime ? '0s' : secondsToTime(Math.floor(words / speakTime))
     }
 
     input.addEventListener('change', getInputInfo)
