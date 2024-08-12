@@ -1,4 +1,5 @@
 <div class="input-info">
+    <p class="info-label">Information</p>
     <div class="info info-words">
         <div class="number words-number">0</div>
         <div class="text words-text">words</div>
@@ -9,7 +10,7 @@
     </div>
     <div class="info info-nospaces">
         <div class="number nospaces-number">0</div>
-        <div class="text nospaces-text">characters without spaces</div>
+        <div class="text nospaces-text">characters (no spaces)</div>
     </div>
     <div class="info info-spaces">
         <div class="number spaces-number">0</div>
@@ -62,9 +63,10 @@
         const readTime = 275 / 60 // words per second
         const speakTime = 180 / 60 // words per second
         const inputText = input.value
-
+        
         // Remove characters that we dont want to count as a word
-        const wordText = inputText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()@\+\?><\[\]\r\n\t]/g, ' ').trim().replace(/\s+/g, ' ')
+        // A word could be form with a - _ . between
+        const wordText = inputText.replace(/[,\/#!$%\^&\*;:{}=\`~()@\+\?><\[\]\r\n\t]/g, ' ').trim().replace(/\s+/g, ' ')
         const words = wordText.split(/\s+/).filter(word => word !== '').length
 
         const characters = inputText.replaceAll('/n', '').length
