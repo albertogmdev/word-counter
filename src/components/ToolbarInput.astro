@@ -1,0 +1,75 @@
+<div class="component-toolbar">
+    <div class="toolbar-transform">
+        <button class="transform-uppercase">AA</button>
+        <button class="transform-lowercase">aa</button>
+        <button class="transform-sentencecase">Aa. Aa</button>
+        <button class="transform-camelcase">Aa Aa</button>
+    </div>
+    <div class="toolbar-actions">
+        <button class="action-copy">Copy</button>
+        <button class="action-delete">Delete</button>
+    </div>
+</div>
+
+<script>
+    const input = document.querySelector('#word-input')
+
+    const uppercaseBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-uppercase')
+    const lowercaseBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-lowercase')
+    const sentencecaseBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-sentencecase')
+    const camelcaseBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-camelcase')
+    const copyBtn = document.querySelector('.component-toolbar .toolbar-actions .action-copy')
+    const deleteBtn = document.querySelector('.component-toolbar .toolbar-actions .action-delete')
+
+    const deleteContent = () => {
+        input.value = ''
+
+        const event = new Event('input', { bubbles: true })
+        input.dispatchEvent(event)
+    }
+
+    const copyContent = (inputText) => { 
+        if (!navigator.clipboard) {
+            const textarea = document.createElement('textarea')
+            textarea.value = inputText
+            document.body.appendChild(textarea)
+            textarea.select()
+            document.execCommand('copy')
+            document.body.removeChild(textarea)
+            console.log('Texto copiado correctamente');
+        } else {
+            navigator.clipboard.writeText(inputText).then(() => {
+                console.log('Texto copiado correctamente');
+            }).catch(err => {
+                console.error('Error al copiar al portapapeles:', err);
+            });
+        }
+    }
+
+    const toolbarFunctions = (functionName) => {
+        const inputText = input.value
+
+        if(inputText === '') return
+
+        // By default set the transformation to lowecase
+        input.value = input.value.toLowerCase()
+        if(functionName === 'uppercase') input.value = inputText.toUpperCase()
+        else if(functionName === 'lowercase') input.value = input.value.toLowerCase()
+        else if(functionName === 'sentencecase') input.value = input.value
+            .split('. ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('. ')
+            .split('\n').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('\n')
+        else if(functionName === 'camelcase') input.value = input.value
+            .split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+            .split('\n').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('\n')
+        else if(functionName === 'copy') copyContent(inputText)
+        else if(functionName === 'delete') deleteContent()
+        else input.value = inputText
+    }
+
+    uppercaseBtn.addEventListener('click', () => toolbarFunctions('uppercase'))
+    lowercaseBtn.addEventListener('click', () => toolbarFunctions('lowercase'))
+    sentencecaseBtn.addEventListener('click', () => toolbarFunctions('sentencecase'))
+    camelcaseBtn.addEventListener('click', () => toolbarFunctions('camelcase'))
+    copyBtn.addEventListener('click', () => toolbarFunctions('copy'))
+    deleteBtn.addEventListener('click', () => toolbarFunctions('delete'))
+</script>
