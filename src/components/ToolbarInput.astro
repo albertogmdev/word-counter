@@ -1,9 +1,9 @@
 <div class="component-toolbar">
     <div class="toolbar-transform">
-        <button class="transform-uppercase">AA</button>
-        <button class="transform-lowercase">aa</button>
-        <button class="transform-sentencecase">Aa. Aa</button>
-        <button class="transform-camelcase">Aa Aa</button>
+        <button class="transform-uppercase" title="UPPERCASE">AA</button>
+        <button class="transform-lowercase" title="lowercase">aa</button>
+        <button class="transform-sentencecase" title="Senten Cecase">Aa. Aa</button>
+        <button class="transform-camelcase" title="Camel Case">Aa Aa</button>
     </div>
     <div class="toolbar-actions">
         <button class="action-copy">Copy</button>
@@ -51,8 +51,9 @@
 
         if(inputText === '') return
 
-        // By default set the transformation to lowecase
-        input.value = input.value.toLowerCase()
+        // By default set the transformation to lowercase excludying copy function
+        if(functionName !== 'copy') input.value = input.value.toLowerCase()
+
         if(functionName === 'uppercase') input.value = inputText.toUpperCase()
         else if(functionName === 'lowercase') input.value = input.value.toLowerCase()
         else if(functionName === 'sentencecase') input.value = input.value
