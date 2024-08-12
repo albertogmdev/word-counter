@@ -1,13 +1,49 @@
 .input-component {
-    width: 80%;
+    width: 95%;
     max-width: 700px;
-    margin: 0px auto;
-    padding: 30px 0px;
+    margin: 30px auto;
+    background-color: $bg-medium;
+    border-radius: $border-radius-box;
+    border: 1px solid $line-light;
+    overflow: hidden;
 
     .component-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        height: 30px;
+        //height: 30px;
+        padding: 10px;
+        border-bottom: none;
         background-color: $bg-medium;
+
+        .toolbar-transform,
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            button {
+                border-radius: $border-radius-box;
+                border: 1px solid $bg-light;
+                padding: 10px;
+                color: $text-light;
+                background-color: $bg-medium;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+
+                &:hover { 
+                    color: $bg-medium;
+                    background-color: $text-light;
+                }
+            }
+        }
+
+        .toolbar-actions {
+            button {
+                
+            }
+        }
     }
 
     .component-input {
@@ -16,13 +52,24 @@
         resize: none;
         width: 100%;
         height: 50vh;
+        padding: 20px 16px;
         max-height: 500px;
         overflow-y: scroll;
+        font-family: $font-text;
+        font-size: 16px;
         background-color: $bg-medium;
         border-top: 1px solid $line-medium;
         color: $text-light;
-        font-family: $font-text;
-        font-size: 16px;
-        padding: 30px 16px;
+
+        &::-webkit-scrollbar {
+            width: 18px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border: 6px solid $bg-medium;
+            background-clip: padding-box;
+            border-radius: 9999px;
+            background-color: $bg-light;
+        }
     }
 }

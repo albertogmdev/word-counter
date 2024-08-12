@@ -28,38 +28,71 @@ main {
   position: relative; }
 
 .input-component {
-  width: 80%;
+  width: 95%;
   max-width: 700px;
-  margin: 0px auto;
-  padding: 30px 0px; }
+  margin: 30px auto;
+  background-color: #272727;
+  border-radius: 10px;
+  border: 1px solid #a5a5a5;
+  overflow: hidden; }
   .input-component .component-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
-    height: 30px;
+    padding: 10px;
+    border-bottom: none;
     background-color: #272727; }
+    .input-component .component-toolbar .toolbar-transform,
+    .input-component .component-toolbar .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 5px; }
+      .input-component .component-toolbar .toolbar-transform button,
+      .input-component .component-toolbar .toolbar-actions button {
+        border-radius: 10px;
+        border: 1px solid #585858;
+        padding: 10px;
+        color: #E1E1E1;
+        background-color: #272727;
+        cursor: pointer;
+        transition: all .3s ease-in-out; }
+        .input-component .component-toolbar .toolbar-transform button:hover,
+        .input-component .component-toolbar .toolbar-actions button:hover {
+          color: #272727;
+          background-color: #E1E1E1; }
   .input-component .component-input {
     outline: none;
     border: none;
     resize: none;
     width: 100%;
     height: 50vh;
+    padding: 20px 16px;
     max-height: 500px;
     overflow-y: scroll;
-    background-color: #272727;
-    border-top: 1px solid #2d353b;
-    color: #E1E1E1;
     font-family: monospace;
     font-size: 16px;
-    padding: 30px 16px; }
+    background-color: #272727;
+    border-top: 1px solid #2d353b;
+    color: #E1E1E1; }
+    .input-component .component-input::-webkit-scrollbar {
+      width: 18px; }
+    .input-component .component-input::-webkit-scrollbar-thumb {
+      border: 6px solid #272727;
+      background-clip: padding-box;
+      border-radius: 9999px;
+      background-color: #585858; }
 
 .input-info {
   display: flex;
   align-items: bottom;
   flex-wrap: wrap;
-  width: 80%;
+  width: 95%;
   max-width: 700px;
   border-radius: 10px;
   margin: 30px auto;
   padding: 20px 30px;
+  border: 1px solid #a5a5a5;
   background-color: #272727; }
   .input-info .info {
     width: 20%; }
