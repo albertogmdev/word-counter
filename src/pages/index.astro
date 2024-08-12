@@ -10,10 +10,12 @@ import Footer from '@components/Footer.astro';
 ---
 
 <Layout title="Word Counter">
-	<main>
+	<main class="app-layout">
 		<Navbar></Navbar>
-		<InputInfo></InputInfo>
-		<TextInput></TextInput>
+		<div class="input-container container">
+			<TextInput></TextInput>
+			<InputInfo></InputInfo>
+		</div>
 		<Footer></Footer>
 	</main>
 </Layout>

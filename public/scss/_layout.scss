@@ -1,0 +1,29 @@
+$input-gap: 30px;
+
+.app-layout {
+    .input-container { 
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: $input-gap;
+        margin: 60px auto;
+
+        .input-component {
+            width: calc(65% - #{$input-gap} / 2);
+        }
+        .input-info {
+            width: calc(35% - #{$input-gap} / 2);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .app-layout {
+        .input-container { 
+            .input-component,
+            .input-info {
+                width: 100%;
+            }
+        }
+    }
+}
