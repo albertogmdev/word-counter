@@ -1,9 +1,9 @@
 .input-info {
     border-radius: $border-radius-box;
-    border: 1px solid $line-light;
-    background-color: $bg-medium;
+    border: 1px solid $line-50;
+    background-color: $bg-50;
     overflow: hidden;
-    box-shadow: 0px 0px 20px 0px rgba($line-light, 0.5);
+    box-shadow: 0px 0px 20px 0px rgba($line-50, 0.5);
 
     .info-label { 
         display: flex;
@@ -13,7 +13,7 @@
         padding: 0px 16px;
         text-transform: uppercase;
         font-size: 16px;
-        color: $text-light;
+        color: $text-50;
         background: rgba(255, 255, 255, 0.23);
         backdrop-filter: blur(7px);
         -webkit-backdrop-filter: blur(7px);
@@ -24,11 +24,11 @@
         align-items: center;
         justify-content: space-between;
         flex-direction: row-reverse;
-        border-bottom: 1px solid $line-light;
+        border-bottom: 1px solid $line-50;
 
         .number,
         .text {
-            color: $text-light;
+            color: $text-50;
             font-size: 16px;
             text-transform: capitalize;
             margin: 15px 20px;

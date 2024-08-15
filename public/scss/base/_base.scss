@@ -4,6 +4,7 @@
     padding: 0;
     scroll-behavior: smooth;
     font-family: $font-text;
+    transition: color .3s linear, background .3s linear;
 }
 
 html {
@@ -20,7 +21,7 @@ main {
     position: relative;
     padding-bottom: $footer-height;
     min-height: 100vh;
-    background-color: $bg-dark;
+    background-color: $bg-75;
 }
 
 .container {

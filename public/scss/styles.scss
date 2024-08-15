@@ -1,9 +1,19 @@
-@import 'variables';
+//Abstract
+@import 'abstract/variables',
+'abstract/mixins';
 
-@import 'base',
-'layout';
+//Themes
+@import 'themes/themes';
 
-@import 'text-input',
-'input-info',
-'navbar',
-'footer';
+//Base
+@import 'base/base',
+'base/icons';
+
+//Layout
+@import 'layout/layout',
+'layout/footer',
+'layout/navbar';
+
+//Components
+@import 'components/input-info',
+'components/text-input';
