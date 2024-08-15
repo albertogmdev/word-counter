@@ -14,7 +14,8 @@ main {
   --line-100: #101214;
   --line-75: #2d353b;
   --line-50: #a5a5a5;
-  --accent: #75A63C; }
+  --negative: 255, 255, 255;
+  --accent: 117, 166, 60; }
 
 .theme--dark {
   --bg-100: #000000;
@@ -27,20 +28,21 @@ main {
   --line-100: #101214;
   --line-75: #2d353b;
   --line-50: #a5a5a5;
-  --accent: #75A63C; }
+  --accent: 117, 166, 60; }
 
 .theme--light {
   --bg-100: #f7f7f7;
   --bg-75: #e2e2e2;
-  --bg-50: #c0c0c0;
+  --bg-50: #cfcfcf;
   --bg-25: #909090;
-  --text-100: #2b2b2b;
+  --text-100: #E1E1E1;
   --text-75: #404040;
   --text-50: #141414;
   --line-100: #bfbfbf;
   --line-75: #9f9f9f;
   --line-50: #6f6f6f;
-  --accent: #75A63C; }
+  --negative: 0, 0, 0;
+  --accent: 117, 166, 60; }
 
 * {
   box-sizing: border-box;
@@ -238,8 +240,7 @@ main {
   border-radius: 10px;
   border: 1px solid var(--line-50);
   background-color: var(--bg-50);
-  overflow: hidden;
-  box-shadow: 0px 0px 20px 0px rgba(var(--line-50), 0.5); }
+  overflow: hidden; }
   .input-info .info-label {
     display: flex;
     align-items: center;
@@ -248,10 +249,8 @@ main {
     padding: 0px 16px;
     text-transform: uppercase;
     font-size: 16px;
-    color: var(--text-50);
-    background: rgba(255, 255, 255, 0.23);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px); }
+    color: var(--text-100);
+    background-color: rgba(var(--negative), 0.5); }
   .input-info .info {
     display: flex;
     align-items: center;
@@ -281,7 +280,7 @@ main {
   border-radius: 10px;
   border: 1px solid var(--line-50);
   overflow: hidden;
-  box-shadow: 0px 0px 20px 0px rgba(var(--line-50), 0.5); }
+  box-shadow: 0px 0px 30px 0px rgba(var(--accent), 0.75); }
   .input-component .component-toolbar {
     display: flex;
     align-items: center;
@@ -290,9 +289,7 @@ main {
     height: 60px;
     padding: 10px;
     border-bottom: none;
-    background: rgba(255, 255, 255, 0.23);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px); }
+    background-color: rgba(var(--negative), 0.5); }
     .input-component .component-toolbar .toolbar-transform,
     .input-component .component-toolbar .toolbar-actions {
       display: flex;
@@ -305,7 +302,7 @@ main {
         border: 1px solid var(--bg-25);
         padding: 10px;
         color: var(--text-50);
-        background-color: var(--bg-50);
+        background-color: var(--bg-75);
         cursor: pointer;
         transition: all .3s ease-in-out; }
         .input-component .component-toolbar .toolbar-transform button:hover,
@@ -335,5 +332,9 @@ main {
       background-clip: padding-box;
       border-radius: 9999px;
       background-color: var(--bg-25); }
+
+@media (max-width: 1024px) {
+  .input-component {
+    box-shadow: none; } }
 
 /*# sourceMappingURL=styles.css.map */

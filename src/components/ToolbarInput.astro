@@ -3,7 +3,7 @@
         <button class="transform-uppercase" title="UPPERCASE">AA</button>
         <button class="transform-lowercase" title="lowercase">aa</button>
         <button class="transform-sentencecase" title="Sentence Cecase">Aa. Aa</button>
-        <button class="transform-camelcase" title="Camel Case">Aa Aa</button>
+        <button class="transform-capitalize" title="Capitalize">Aa Aa</button>
     </div>
     <div class="toolbar-actions">
         <button class="action-copy">Copy</button>
@@ -17,7 +17,7 @@
     const uppercaseBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-uppercase')
     const lowercaseBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-lowercase')
     const sentencecaseBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-sentencecase')
-    const camelcaseBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-camelcase')
+    const capitalizeBtn = document.querySelector('.component-toolbar .toolbar-transform .transform-capitalize')
     const copyBtn = document.querySelector('.component-toolbar .toolbar-actions .action-copy')
     const deleteBtn = document.querySelector('.component-toolbar .toolbar-actions .action-delete')
 
@@ -59,7 +59,7 @@
         else if(functionName === 'sentencecase') input.value = input.value
             .split('. ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('. ')
             .split('\n').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('\n')
-        else if(functionName === 'camelcase') input.value = input.value
+        else if(functionName === 'capitalize') input.value = input.value
             .split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
             .split('\n').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('\n')
         else if(functionName === 'copy') copyContent(inputText)
@@ -70,7 +70,7 @@
     uppercaseBtn.addEventListener('click', () => toolbarFunctions('uppercase'))
     lowercaseBtn.addEventListener('click', () => toolbarFunctions('lowercase'))
     sentencecaseBtn.addEventListener('click', () => toolbarFunctions('sentencecase'))
-    camelcaseBtn.addEventListener('click', () => toolbarFunctions('camelcase'))
+    capitalizeBtn.addEventListener('click', () => toolbarFunctions('capitalize'))
     copyBtn.addEventListener('click', () => toolbarFunctions('copy'))
     deleteBtn.addEventListener('click', () => toolbarFunctions('delete'))
 </script>
