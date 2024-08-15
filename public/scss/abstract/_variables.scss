@@ -19,15 +19,16 @@ $line-100-dark: #101214;
 $line-75-dark: #2d353b;
 $line-50-dark: #a5a5a5;
 
-$accent-dark: #75A63C;
+$negative-dark: 255, 255, 255;
+$accent-dark: 117, 166, 60;
 
 // Tema Claro
 $bg-100-light: #f7f7f7;
 $bg-75-light: #e2e2e2;
-$bg-50-light: #c0c0c0;
+$bg-50-light: #cfcfcf;
 $bg-25-light: #909090;
 
-$text-100-light: #2b2b2b;
+$text-100-light: #E1E1E1;
 $text-75-light: #404040;
 $text-50-light: #141414;
 
@@ -35,4 +36,5 @@ $line-100-light: #bfbfbf;
 $line-75-light: #9f9f9f;
 $line-50-light: #6f6f6f;
 
-$accent-light: #75A63C;
+$negative-light: 0, 0, 0;
+$accent-light: 117, 166, 60;

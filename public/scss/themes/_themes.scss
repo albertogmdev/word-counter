@@ -9,6 +9,7 @@ main {
     --line-100: #{$line-100-dark};
     --line-75: #{$line-75-dark};
     --line-50: #{$line-50-dark};
+    --negative: #{$negative-dark};
     --accent: #{$accent-dark};
 }
 
@@ -37,6 +38,7 @@ main {
     --line-100: #{$line-100-light};
     --line-75: #{$line-75-light};
     --line-50: #{$line-50-light};
+    --negative: #{$negative-light};
     --accent: #{$accent-light};
 }
 
@@ -50,4 +52,5 @@ $text-50: var(--text-50);
 $line-100: var(--line-100);
 $line-75: var(--line-75);
 $line-50: var(--line-50);
+$negative: var(--negative);
 $accent: var(--accent);

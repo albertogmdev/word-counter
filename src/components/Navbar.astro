@@ -10,7 +10,7 @@
     const themeSwitch = document.querySelector('.navbar .navbar-icon')
 
     themeSwitch.addEventListener('click', () => {
-        const isDarkMode = layout.classList.contains('theme--dark')
+        const isDarkMode = !layout.classList.contains('theme--light')
 
         if(isDarkMode) {
             layout.classList.remove('theme--dark')
