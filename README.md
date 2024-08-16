@@ -1,8 +1,8 @@
 # Word Counter
 
-This project is a web application built using [Astro](https://astro.build/){:target="_blank"} (Astro version 4.13.2) and [SCSS](https://sass-lang.com/){:target="_blank"}. This app has an user-friendly / easy to use layout, where the user can input a text and get detailed information about it or convert the text in different formats.
+This project is a web application built using <a href="https://astro.build/" target="_blank">Astro</a> (Astro version 4.13.2) and <a href="https://sass-lang.com/" target="_blank">SCSS</a>. This app has an user-friendly / easy to use layout, where the user can input a text and get detailed information about it or convert the text in different formats.
 
-Check the live version [here](https://albertogmdev.github.io/word-counter/){:target="_blank"}
+Check the live version <a href="https://albertogmdev.github.io/word-counter/" target="_blank">here</a>.
 
 ![image](https://github.com/user-attachments/assets/30a6b226-02e0-44c0-94d4-5f31b542b1d9)
 
