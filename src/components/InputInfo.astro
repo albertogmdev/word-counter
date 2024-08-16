@@ -65,8 +65,13 @@
         const inputText = input.value
         
         // Remove characters that we dont want to count as a word
-        // A word could be form with a - _ . between
-        const wordText = inputText.replace(/[,\/#!$%\^&\*;:{}=\`~()@\+\?><\[\]\r\n\t]/g, ' ').trim().replace(/\s+/g, ' ')
+        // A word could be form with a - _ between
+        const wordText = inputText
+            .replace(/(?<!\w)\.(?!\w)/g, ' ') // Replace the dot only if it is not between two words
+            .replace(/[,\/#!$%\^&\*;:{}=\`~()@"'`|\+\?><\[\]\u00A0]/g, ' ')
+            .replace(/\s{2,}/g, ' ') 
+            .trim()
+        console.log(wordText.split(/\s+/))
         const words = wordText.split(/\s+/).filter(word => word !== '').length
 
         const characters = inputText.replaceAll('/n', '').length
