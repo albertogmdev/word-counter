@@ -2,7 +2,7 @@
 
 This project is a web application built using [Astro](https://astro.build/) (Astro version 4.13.2) and [SCSS](https://sass-lang.com/). This app has an user-friendly / easy to use layout, where the user can input a text and get detailed information about it or convert the text in different formats.
 
-![image](https://github.com/user-attachments/assets/18f74889-f839-45f8-b112-f441d9d74f0a)
+![image](https://github.com/user-attachments/assets/9be86461-65a2-4826-b3ef-82176581fcf4)
 
 ## Features
 
